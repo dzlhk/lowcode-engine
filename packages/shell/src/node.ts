@@ -124,9 +124,7 @@ export default class Node {
   /**
    * judge if it is a node or not
    */
-  get isNode() {
-    return true;
-  }
+  readonly isNode = true;
 
   /**
    * 下标
@@ -459,5 +457,12 @@ export default class Node {
    */
   remove() {
     this[nodeSymbol].remove();
+  }
+
+  /**
+   * 设置为磁贴布局节点
+   */
+  setRGLContainer(flag: boolean) {
+    this[nodeSymbol].isRGLContainer = flag;
   }
 }
